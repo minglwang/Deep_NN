@@ -41,11 +41,22 @@ class Net(torch.nn.Module):
         return x
 
 net = Net(n_feature=2, n_hidden=10, n_output=2)     # define the network
+
+# method 2
+net2 = torch.nn.Sequential(
+    torch.nn.Linear(2,10),
+    torch.nn.ReLU(),
+    torch.nn.Linear(10,2)
+)
+
+print(net2)
+
+
 optimizer = torch.optim.SGD(net.parameters(), lr = 0.01)
 loss_func = torch.nn.CrossEntropyLoss()
-
+plt.figure(1)
 plt.ion()
-for t in range(50):
+for t in range(100):
     out = net(x)
     loss = loss_func(out, y)
     optimizer.zero_grad()

@@ -17,7 +17,6 @@ y = x.pow(2) + 0.2*torch.rand(x.size())
 
 x, y = Variable(x), Variable(y)
 
-
 class Net(torch.nn.Module):
     def __init__(self,n_features,n_hidden,n_output):
         super(Net,self).__init__()
