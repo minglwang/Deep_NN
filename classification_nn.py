@@ -29,8 +29,6 @@ y = torch.cat((y0,y1), ).type(torch.LongTensor)
 
 x, y = Variable(x), Variable(y)
 
-
-
 class Net(torch.nn.Module):
     def __init__(self,n_feature,n_hidden,n_output):
         super(Net,self).__init__()
@@ -43,12 +41,11 @@ class Net(torch.nn.Module):
         return x
 
 net = Net(n_feature=2, n_hidden=10, n_output=2)     # define the network
-
 optimizer = torch.optim.SGD(net.parameters(), lr = 0.01)
 loss_func = torch.nn.CrossEntropyLoss()
 
 plt.ion()
-
+%matplotlib
 for t in range(50):
     out = net(x)
     loss = loss_func(out, y)
