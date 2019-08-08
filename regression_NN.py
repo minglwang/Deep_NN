@@ -14,3 +14,15 @@ x, y = Variable(x), Variable(y)
 plt.scatter(x.numpy(),y.numpy())
 plt.show()
 
+class Net(torch.nn.Module):
+    def __init__(self,n_features,n_hidden,n_output)：
+        super(Net,self).__init__()
+        self.hidden = torch.nn.Linear(n_features, n_hidden)
+        self.predict = torch.nn.Linear(n_hidden, n_output)
+
+    def forward(self):
+        x = F.relu(self.hidden(x))
+        x = self.predict(x)
+        return x
+net = Net(1,10,1)
+print(net)
