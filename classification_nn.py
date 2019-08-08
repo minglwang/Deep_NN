@@ -45,7 +45,6 @@ optimizer = torch.optim.SGD(net.parameters(), lr = 0.01)
 loss_func = torch.nn.CrossEntropyLoss()
 
 plt.ion()
-%matplotlib
 for t in range(50):
     out = net(x)
     loss = loss_func(out, y)
@@ -64,4 +63,5 @@ for t in range(50):
         plt.pause(0.1)
     plt.ioff()
     plt.show()
+    # working f
 
