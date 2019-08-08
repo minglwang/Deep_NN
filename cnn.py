@@ -29,6 +29,7 @@ if not(os.path.exists('./mnist/')) or not os.listdir('./mnist/'):
     # not mnist dir or mnist is empyt dir
     DOWNLOAD_MNIST = True
 
+# load the traning data
 train_data = torchvision.datasets.MNIST(
     root='./mnist/',
     train=True,                                     # this is training data
