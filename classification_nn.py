@@ -54,7 +54,7 @@ print(net2)
 
 optimizer = torch.optim.SGD(net.parameters(), lr = 0.01)
 loss_func = torch.nn.CrossEntropyLoss()
-plt.figure(1)
+
 plt.ion()
 for t in range(100):
     out = net(x)
